@@ -1,0 +1,7 @@
+[ui]
+merge = vimdiff
+username = Matt Mirande <mattmirande@cheezburger.com>
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
