@@ -9,12 +9,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'wycats/nerdtree'
+"Bundle 'wycats/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
-" Bundle 'hallettj/jslint.vim'
+"Bundle 'hallettj/jslint.vim'
 Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'pangloss/vim-javascript'
@@ -33,6 +33,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
 
 " Basics
 set number
@@ -73,6 +74,11 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+let NERDTreeMouseMode=2
+let NERDTreeAutoCenter=0
+let NERDChristmasTree=1
+let NERDTreeChDirMode=2
+let NERDTreeDirArrows=1
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration

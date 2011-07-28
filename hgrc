@@ -1,3 +1,6 @@
+[alias]
+latest = log --limit 5
+
 [ui]
 merge = vimdiff
 username = Matt Mirande <mattmirande@cheezburger.com>
@@ -5,3 +8,9 @@ username = Matt Mirande <mattmirande@cheezburger.com>
 [merge-tools]
 vimdiff.executable = vim
 vimdiff.args = -d $base $local $output $other +close +close
+
+[web]
+cacerts = /Users/mattmirande/.hgCert.pem
+
+# auth
+%include /Users/mattmirande/.hgAuth
