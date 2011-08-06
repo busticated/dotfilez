@@ -6,10 +6,9 @@ merge = vimdiff
 username = Matt Mirande <mattmirande@cheezburger.com>
 
 [merge-tools]
-vimdiff.executable = vim
+vimdiff.executable = mvim
 vimdiff.args = -d $base $local $output $other +close +close
 
-[web]
 cacerts = /Users/mattmirande/.hgCert.pem
 
 # auth

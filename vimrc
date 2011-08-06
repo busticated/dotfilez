@@ -17,6 +17,7 @@ Bundle 'digitaltoad/vim-jade'
 "Bundle 'hallettj/jslint.vim'
 Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
+"Bundle 'robgleeson/hammer.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
@@ -81,8 +82,8 @@ let NERDTreeChDirMode=2
 let NERDTreeDirArrows=1
 map <Leader>n :NERDTreeToggle<CR>
 
-" Command-T configuration
-let g:CommandTMaxHeight=20
+" Command-T plugin configuration
+" let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
