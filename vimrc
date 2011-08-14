@@ -106,7 +106,7 @@ endfunction
 
 function! s:setupMarkup()
   call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
+  " map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
 " make uses real tabs

@@ -10,8 +10,6 @@ if has("gui_macvim")
   " Command-T for PeepOpen plugin
   " macmenu &File.New\ Tab key=<nop>
   " map <D-t> <Plug>PeepOpen
-  " end
-
 
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
@@ -25,7 +23,6 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
-
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
