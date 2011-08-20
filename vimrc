@@ -17,7 +17,7 @@ Bundle 'digitaltoad/vim-jade'
 "Bundle 'hallettj/jslint.vim'
 Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
-"Bundle 'robgleeson/hammer.vim'
+Bundle 'robgleeson/hammer.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
@@ -106,7 +106,7 @@ endfunction
 
 function! s:setupMarkup()
   call s:setupWrapping()
-  " map <buffer> <Leader>p :Hammer<CR>
+  map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
 " make uses real tabs
@@ -116,15 +116,25 @@ au FileType make set noexpandtab
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupMarkup()
+
+" treat text files as markdown
+au BufRead,BufNewFile *.txt    set filetype=markdown
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+" au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+" php tabbing
+au FileType php set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+
+" js tabbing
+au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -179,7 +189,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
 " Turn off jslint errors by default
-let g:JSLintHighlightErrorLine = 0
+" let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
