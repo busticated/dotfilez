@@ -1,13 +1,13 @@
 [alias]
-latest = log --limit 5
+latest = log --limit 15
 
 [ui]
-merge = vimdiff
+merge = mvimdiff
 username = Matt Mirande <mattmirande@cheezburger.com>
 
 [merge-tools]
-vimdiff.executable = mvim
-vimdiff.args = -d $base $local $output $other +close +close
+mvimdiff.executable = gvim
+mvimdiff.args = -d $base $local $output $other +close +close
 
 [web]
 cacerts = /Users/mattmirande/.hgCert.pem
