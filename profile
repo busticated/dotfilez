@@ -12,4 +12,4 @@ alias chz-unified="cd /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes
 
 #environment variables
 export NODE_PATH="/usr/local/lib/node"
-export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":$PATH
+export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.2-p290/bin":$PATH
