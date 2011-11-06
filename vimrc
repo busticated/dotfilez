@@ -35,6 +35,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+Bundle 'millermedeiros/vim-statline'
 
 " Basics
 set number
