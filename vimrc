@@ -15,7 +15,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
 "Bundle 'hallettj/jslint.vim'
-Bundle 'walm/jshint.vim'
+Bundle 'vim-scripts/jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'robgleeson/hammer.vim'
 Bundle 'pangloss/vim-javascript'
@@ -36,6 +36,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'millermedeiros/vim-statline'
+Bundle 'othree/html5.vim'
 
 " Basics
 set number
@@ -121,17 +122,19 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupMarkup()
 
 " treat text files as markdown
 au BufRead,BufNewFile *.txt    set filetype=markdown
+" au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
-
-" au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 " php tabbing
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+
+" html filetype settings
+au FileType html set textwidth=0
 
 " js tabbing
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
