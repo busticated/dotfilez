@@ -55,7 +55,7 @@ echo "::release tag preview: hg tag -m" \"$msg\" $hgTag
 read -p "::is this good to go (y/n)? "
 if [ "$REPLY" == "n" ]
 then
-	echo "::...aborting release (╯°□°）╯︵ ┻━┻ "
+	echo "::...aborting release...  (╯°□°）╯︵ ┻━┻ "
 	exit
 fi
 
