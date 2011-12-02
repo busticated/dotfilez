@@ -46,6 +46,33 @@ setReleaseTag(){
 	fi
 }
 
+abortMsgAni(){
+	echo -ne '::...aborting release...  (°_°）┳━┳\r'
+	sleep 0.4
+	echo -ne '::...aborting release...  (╯°□°）╯︵ ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵  ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵   ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵    ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵     ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵      ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵       ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵        ┻━┻ \r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (╯°□°）╯︵         XXX\r'
+	sleep 0.3
+	echo -ne '::...aborting release...  (╯°□°）╯︵         xxx\r'
+	sleep 0.3
+	echo -ne '::...aborting release...  (╯°□°）╯︵         ___\r'
+	sleep 0.2
+}
+
 relTag=$(setReleaseTag)
 hgTag='release_'$( echo $relTag | sed -e 's/\([0-9]\{4\}\).\([0-9]\{1,2\}\).\([0-9]\{1,2\}.[0-9]\{1,2\}\)/\1\2\3/')
 
@@ -55,7 +82,7 @@ echo "::release tag preview: hg tag -m" \"$msg\" $hgTag
 read -p "::is this good to go (y/n)? "
 if [ "$REPLY" == "n" ]
 then
-	echo "::...aborting release...  (╯°□°）╯︵ ┻━┻ "
+	abortMsgAni
 	exit
 fi
 
