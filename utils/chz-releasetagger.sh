@@ -47,30 +47,33 @@ setReleaseTag(){
 }
 
 abortMsgAni(){
-	echo -ne '::...aborting release...  (°_°）┳━┳\r'
+	echo -ne '::...aborting release...  (°_°) ┳━┳\r'
 	sleep 0.4
-	echo -ne '::...aborting release...  (╯°□°）╯︵ ┻━┻ \r'
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵ ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵  ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵   ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵    ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵     ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)           ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)            ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)             ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)              XXX\r'
 	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵  ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵   ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵    ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵     ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵      ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵       ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵        ┻━┻ \r'
-	sleep 0.2
-	echo -ne '::...aborting release...  (╯°□°）╯︵         XXX\r'
-	sleep 0.3
-	echo -ne '::...aborting release...  (╯°□°）╯︵         xxx\r'
-	sleep 0.3
-	echo -ne '::...aborting release...  (╯°□°）╯︵         ___\r'
-	sleep 0.2
+	echo -ne '::...aborting release...  (°_°)               xx\r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)                _\r'
+	sleep 0.1
+	echo -ne '::...aborting release...  ╰ (°u°)╯               \r'
+	sleep 0.7
+	echo '::...release aborted...                               '
 }
 
 relTag=$(setReleaseTag)
@@ -80,7 +83,7 @@ echo "::enter your release details below::"
 read msg
 echo "::release tag preview: hg tag -m" \"$msg\" $hgTag
 read -p "::is this good to go (y/n)? "
-if [ "$REPLY" == "n" ]
+if [ "$REPLY" != "y" ]
 then
 	abortMsgAni
 	exit
