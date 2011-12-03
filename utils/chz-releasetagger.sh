@@ -71,7 +71,7 @@ abortMsgAni(){
 	sleep 0.1
 	echo -ne '::...aborting release...  (°_°)                _\r'
 	sleep 0.1
-	echo -ne '::...aborting release...  ╰ (°u°)╯               \r'
+	echo -ne '::...aborting release...  ╰ (°u°)╯              \r'
 	sleep 0.7
 	echo '::...release aborted...                               '
 }
