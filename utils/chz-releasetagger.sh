@@ -11,6 +11,12 @@ fi
 constantsFile=$repoRoot/wp-shared/constants.inc.php
 styleFile=$repoRoot/style.css
 
+if [ ! -f $constantsFile ];
+then
+    echo "::...constants.inc.php not found - is this a UT repository?"
+	exit 1
+fi
+
 buildTimestamp(){
 	year=$(date +%Y)
 	month=$(date +%m)
