@@ -134,11 +134,16 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
 " html filetype settings
-au FileType html set textwidth=0
+au FileType html set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
+
+" css filetype settings
+au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
 
 " js tabbing
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
+" chz ut project tabbing
+au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
