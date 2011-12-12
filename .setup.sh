@@ -3,6 +3,7 @@ set -e
 user=$(whoami)
 
 # Setup symlinks for various config files
+ln -s jshintrc $HOME/.jshintrc
 ln -s gvimrc $HOME/.gvimrc
 ln -s vimrc $HOME/.vimrc
 ln -s profile $HOME/.profile
