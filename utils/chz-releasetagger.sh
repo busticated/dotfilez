@@ -11,6 +11,12 @@ fi
 constantsFile=$repoRoot/wp-shared/constants.inc.php
 styleFile=$repoRoot/style.css
 
+if [ ! -f $constantsFile ];
+then
+    echo "::...constants.inc.php not found - is this a UT repository?"
+	exit 1
+fi
+
 buildTimestamp(){
 	year=$(date +%Y)
 	month=$(date +%m)
@@ -46,6 +52,36 @@ setReleaseTag(){
 	fi
 }
 
+abortMsgAni(){
+	echo -ne '::...aborting release...  (°_°) ┳━┳\r'
+	sleep 0.4
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵ ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵  ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵   ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵    ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (╯°□°)╯ ︵     ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)           ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)            ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)             ┻━┻ \r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)              XXX\r'
+	sleep 0.2
+	echo -ne '::...aborting release...  (°_°)               xx\r'
+	sleep 0.1
+	echo -ne '::...aborting release...  (°_°)                _\r'
+	sleep 0.1
+	echo -ne '::...aborting release...  ╰ (°u°)╯              \r'
+	sleep 0.7
+	echo '::...release aborted...                               '
+}
+
 relTag=$(setReleaseTag)
 hgTag='release_'$( echo $relTag | sed -e 's/\([0-9]\{4\}\).\([0-9]\{1,2\}\).\([0-9]\{1,2\}.[0-9]\{1,2\}\)/\1\2\3/')
 
@@ -53,9 +89,9 @@ echo "::enter your release details below::"
 read msg
 echo "::release tag preview: hg tag -m" \"$msg\" $hgTag
 read -p "::is this good to go (y/n)? "
-if [ "$REPLY" == "n" ]
+if [ "$REPLY" != "y" ]
 then
-	echo "::...aborting release...  (╯°□°）╯︵ ┻━┻ "
+	abortMsgAni
 	exit
 fi
 
