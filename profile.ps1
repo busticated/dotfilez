@@ -11,11 +11,14 @@ $env:path += "; C:\Program Files (x86)\Git\bin"
 # Globals =======================================================================#
 $PROFILE = $HOME + "\Documents\WindowsPowerShell\profile.ps1"
 $NODEMODULES = $HOME + "\AppData\Roaming\npm\node_modules"
+$DROPBOX = $HOME + "\Documents\My Dropbox"
+$DEV = "C:\dev"
+$CHZ = $DEV + "\chzbrgr\chzbrgr.com"
 
 # Startup =======================================================================#
 clear
 Set-ExecutionPolicy RemoteSigned #run local scripts only
-Set-Location "C:\dev"
+Set-Location $DEV
 function prompt{
 	$user = $env:username
 	$location = Get-Location
@@ -23,27 +26,22 @@ function prompt{
 	"$user.........$date..........($location)`n>>"
 }
 
-# Basics =======================================================================#
+# Aliases =======================================================================#
 #Set-Alias example-alias "C:\path\to\some\thing.ext"
 
-
-# Funcs ========================================================================#
-function cd-dropbox { cd "$HOME\Documents\My Dropbox" }
-function cd-chz { cd "C:\dev\chzbrgr" }
+# Funcs =========================================================================#
+function cd-dropbox { cd $DROPBOX }
+function cd-dev { cd $DEV }
+function cd-chz { cd $CHZ }
 function edit-hgrc { notepad "$HOME\Mercurial.ini" }
 function edit-profile { notepad $PROFILE }
-
 function hg-latest($count){
 	if( ! $count ){
 		$count = 5
 	}
-
 	hg log --limit $count
 }
-
-function rjs($buildFile) {
-	node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile
-}
+function rjs($buildFile) { node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile }
 
 # helper to allow the mklink under PowerShell
 function mklink { cmd /c mklink $args }
