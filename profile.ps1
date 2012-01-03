@@ -7,6 +7,8 @@ $env:Path += "; C:\Program Files\Windows Azure SDK\v1.0\bin"
 $env:path += "; C:\Program Files (x86)\nodejs"
 $env:path += "; C:\Program Files (x86)\Python27"
 $env:path += "; C:\Program Files (x86)\Git\bin"
+$env:path += "; C:\Program Files (x86)\Vim\vim73"
+$env:path += "; $HOME\AppData\Local\Google\Chrome\Application\"
 
 # Globals =======================================================================#
 $PROFILE = $HOME + "\Documents\WindowsPowerShell\profile.ps1"
@@ -49,6 +51,12 @@ function mklink { cmd /c mklink $args }
 # open explorer in this directory
 function exp([string] $loc = '.') {
 	explorer "/e,"$loc""
+}
+
+# open this file in chrome
+function chrome([string] $loc = '.') {
+	$loc = (Resolve-Path $loc).path
+	chrome.exe "$loc"
 }
 
 # return all IP addresses
