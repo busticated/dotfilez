@@ -2,14 +2,6 @@
 # PowerShell Profile - C:\Users\mmirande\Documents\WindowsPowerShell\profile.ps1 #
 #================================================================================#
 
-# Path ==========================================================================#
-$env:Path += "; C:\Program Files\Windows Azure SDK\v1.0\bin"
-$env:path += "; C:\Program Files (x86)\nodejs"
-$env:path += "; C:\Program Files (x86)\Python27"
-$env:path += "; C:\Program Files (x86)\Git\bin"
-$env:path += "; C:\Program Files (x86)\Vim\vim73"
-$env:path += "; $HOME\AppData\Local\Google\Chrome\Application\"
-
 # Globals =======================================================================#
 $PROFILE = $HOME + "\Documents\WindowsPowerShell\profile.ps1"
 $NODEMODULES = $HOME + "\AppData\Roaming\npm\node_modules"
@@ -18,16 +10,28 @@ $DEV = "C:\dev"
 $CHZ = $DEV + "\chzbrgr\chzbrgr.com"
 $CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
 
+# Imports =======================================================================#
+import-module $DEV\dotfilez\powershell\utils.psm1
+
 # Startup =======================================================================#
-clear
-Set-ExecutionPolicy RemoteSigned #run local scripts only
+Set-ExecutionPolicy RemoteSigned #run local scripts only, assumes running as admin
 Set-Location $DEV
+Set-EnvPath @(
+	"C:\Program Files\Windows Azure SDK\v1.0\bin",
+	"C:\Program Files (x86)\nodejs",
+	"C:\Program Files (x86)\Python27",
+	"C:\Program Files (x86)\Git\bin",
+	"C:\Program Files (x86)\Vim\vim73",
+	"$HOME\AppData\Local\Google\Chrome\Application\"
+)
 function prompt{
 	$user = $env:username
 	$location = Get-Location
 	$date = Get-Date -format "ddd.MMM.dd.yyyy..HH:mm:ss"
 	"$user.........$date..........($location)`n>>"
 }
+$env:editor = "notepad"
+Set-AnimatedMsg @( " (-_-)", " (°_°)", " ~(°o°)~", " \(°u°)/" ) 300
 
 # Aliases =======================================================================#
 #Set-Alias example-alias "C:\path\to\some\thing.ext"
@@ -45,33 +49,3 @@ function hg-latest($count){
 	hg log --limit $count
 }
 function rjs($buildFile) { node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile }
-
-# helper to allow the mklink under PowerShell
-function mklink { cmd /c mklink $args }
-
-# open explorer in this directory
-function exp([string] $loc = '.') {
-	explorer "/e,"$loc""
-}
-
-# open this file in chrome
-function chrome([string] $loc = '.') {
-	$loc = (Resolve-Path $loc).path
-	chrome.exe "$loc"
-}
-
-# return all IP addresses
-function get-ips() {
-	$ent = [net.dns]::GetHostEntry([net.dns]::GetHostName())
-	return $ent.AddressList | ?{ $_.ScopeId -ne 0 } | %{
-		[string]$_
-	}
-}
-
-# return escaped html
-function escape-html($text) {
-	$text = $text.Replace('&', '&amp;')
-	$text = $text.Replace('"', '&quot;')
-	$text = $text.Replace('<', '&lt;')
-	$text.Replace('>', '&gt;')
-}
