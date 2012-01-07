@@ -74,7 +74,9 @@ set guioptions-=L
 
 " Default gui color scheme & transparency
 color solarized
-set transparency=5
+if has("gui_macvim")
+    set transparency=5
+endif
 
 " Default font & font size
 set guifont=Inconsolata:h13

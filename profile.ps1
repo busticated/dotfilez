@@ -20,8 +20,11 @@ Set-EnvPath @(
 	"C:\Program Files\Windows Azure SDK\v1.0\bin",
 	"C:\Program Files (x86)\nodejs",
 	"C:\Program Files (x86)\Python27",
+	"C:\Ruby193\bin",
 	"C:\Program Files (x86)\Git\bin",
 	"C:\Program Files (x86)\Vim\vim73",
+	"C:\Ruby193\bin",
+	"C:\ctags58",
 	"$HOME\AppData\Local\Google\Chrome\Application\"
 )
 function prompt{
