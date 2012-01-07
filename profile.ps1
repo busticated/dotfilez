@@ -16,6 +16,7 @@ $NODEMODULES = $HOME + "\AppData\Roaming\npm\node_modules"
 $DROPBOX = $HOME + "\Documents\My Dropbox"
 $DEV = "C:\dev"
 $CHZ = $DEV + "\chzbrgr\chzbrgr.com"
+$CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
 
 # Startup =======================================================================#
 clear
