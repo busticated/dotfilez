@@ -26,7 +26,7 @@ function Set-EnvPath{
 
 	ForEach( $p in $paths ){
 		if ( -not ( test-path $p ) ) {
-			write-host "Missing reference found - skipping : $p";
+			write-host "Invalid PATH reference found during setup - skipping : $p";
 			continue
 		}
 		[System.Environment]::SetEnvironmentVariable( "PATH", $env:Path + ";" + $p, "Process" )

@@ -16,17 +16,6 @@ import-module $DEV\dotfilez\powershell\utils.psm1
 # Startup =======================================================================#
 Set-ExecutionPolicy RemoteSigned #run local scripts only, assumes running as admin
 Set-Location $DEV
-Set-EnvPath @(
-	"C:\Program Files\Windows Azure SDK\v1.0\bin",
-	"C:\Program Files (x86)\nodejs",
-	"C:\Program Files (x86)\Python27",
-	"C:\Ruby193\bin",
-	"C:\Program Files (x86)\Git\bin",
-	"C:\Program Files (x86)\Vim\vim73",
-	"C:\Ruby193\bin",
-	"C:\ctags58",
-	"$HOME\AppData\Local\Google\Chrome\Application\"
-)
 function prompt{
 	$user = $env:username
 	$location = Get-Location
@@ -35,6 +24,16 @@ function prompt{
 }
 $env:editor = "notepad"
 Set-AnimatedMsg @( " (-_-)", " (°_°)", " ~(°o°)~", " \(°u°)/" ) 300
+Set-EnvPath @(
+	"C:\Program Files\Windows Azure SDK\v1.6\bin",
+	"C:\Program Files (x86)\nodejs",
+	"C:\Program Files (x86)\Python27",
+	"C:\Ruby193\bin",
+	"C:\Program Files (x86)\Git\bin",
+	"C:\Program Files (x86)\Vim\vim73",
+	"C:\ctags58",
+	"$HOME\AppData\Local\Google\Chrome\Application\"
+)
 
 # Aliases =======================================================================#
 #Set-Alias example-alias "C:\path\to\some\thing.ext"
