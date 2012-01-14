@@ -1,5 +1,7 @@
 [core]
-	excludesfile = /Users/mattmirande/.gitignore_global
+
+	excludesfile = C:\\User\\mmirande\\.gitignore_global
+
 [user]
 	name = busticated
 	email = itsbusticated@gmail.com
