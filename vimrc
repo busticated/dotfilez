@@ -37,6 +37,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'othree/html5.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sickill/vim-pasta'
 
 " Basics
 set number
@@ -199,6 +201,14 @@ set directory=~/.vim/backup
 
 " Turn off jslint errors by default
 " let g:JSLintHighlightErrorLine = 0
+
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$',
+  \ 'link': 'bad_symbolic_link',
+  \ }
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
