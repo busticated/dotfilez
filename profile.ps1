@@ -7,7 +7,7 @@ $PROFILE = $HOME + "\Documents\WindowsPowerShell\profile.ps1"
 $NODEMODULES = $HOME + "\AppData\Roaming\npm\node_modules"
 $DROPBOX = $HOME + "\Documents\My Dropbox"
 $DEV = "C:\dev"
-$CHZ = $DEV + "\chzbrgr\chzbrgr.com"
+$CHZ = $DEV + "\chzbrgr\ChzClean"
 $CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
 
 # Imports =======================================================================#
@@ -36,18 +36,30 @@ Set-EnvPath @(
 )
 
 # Aliases =======================================================================#
-#Set-Alias example-alias "C:\path\to\some\thing.ext"
+Set-Alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
+Set-Alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
 
-# Funcs =========================================================================#
+# Helper Funcs ==================================================================#
 function cd-dropbox { cd $DROPBOX }
 function cd-dev { cd $DEV }
 function cd-chz { cd $CHZ }
+function cd-chzmirande { cd $CHZMIRANDE }
 function edit-hgrc { notepad "$HOME\Mercurial.ini" }
 function edit-profile { notepad $PROFILE }
-function hg-latest($count){
+function hg-latest( $count ){
 	if( ! $count ){
 		$count = 5
 	}
 	hg log --limit $count
 }
-function rjs($buildFile) { node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile }
+function Build-JS( $buildFile ) { node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile }
+
+#bah... msbuild does this already by default... might be more helpful to optionally
+#build all or some of the individual projects
+function Build-Chz( $buildDir ){
+	if ( -not ( test-path "$buildDir\Mine.sln" ) ) {
+		write-host "Invalid project file - $buildDir does not exist";
+		return
+	}
+	msbuild "$buildDir\Mine.sln"
+}

@@ -33,6 +33,11 @@ function Set-EnvPath{
 	}
 }
 
+# framework refs - thanks frank!
+function Get-FrameworkDirectory(){
+    $([System.Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory())
+}
+
 function Get-IPs() {
 	$ent = [net.dns]::GetHostEntry([net.dns]::GetHostName())
 	return $ent.AddressList | ?{ $_.ScopeId -ne 0 } | %{
