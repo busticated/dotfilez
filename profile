@@ -11,6 +11,7 @@ alias cd-chz="cd /Users/mattmirande/Sites/chzbrgr/"
 alias cd-chzUT="cd /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes/Unified/"
 alias edit-profile="start-mvim /Users/mattmirande/.dotfiles/profile"
 alias edit-vimrc="start-mvim /Users/mattmirande/.dotfiles/vimrc"
+alias edit-hosts="start-mvim /private/etc/hosts sudo"
 alias exp="open"
 
 #environment variables
@@ -19,5 +20,5 @@ export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.3-p0/
 
 #helpers
 function start-mvim(){
-    mvim -c ":lcd %:p:h" $1
+    $2 mvim -c ":lcd %:p:h" $1
 }
