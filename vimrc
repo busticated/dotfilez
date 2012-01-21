@@ -59,6 +59,9 @@ set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Folding
+set foldopen=all
+
 " Searching
 set hlsearch
 set incsearch
@@ -95,6 +98,13 @@ map <Leader><Leader> :ZoomWin<CR>
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
+
+" Snippets
+let g:snippets_dir="~/.dotfiles/snippets/"
+
+"if has("mac")
+"    call ExtractSnipsFile("~/.dotfiles/snippets/", "javascript")
+
 
 " Remember last location in file
 if has("autocmd")
