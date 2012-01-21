@@ -100,7 +100,7 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " Snippets
-let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/,~/.dotfiles/snippets/"
+let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/,~/.dotfiles/vim/snippets/"
 
 "if has("mac")
 "    call ExtractSnipsFile("~/.dotfiles/snippets/", "javascript")
