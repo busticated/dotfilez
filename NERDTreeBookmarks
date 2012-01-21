@@ -1,14 +1,11 @@
-sites /Users/mattmirande/Sites
+onoprotos /Users/mattmirande/Sites/chzbrgr/OnOProtos
 ichc /Users/mattmirande/Sites/chzbrgr/icanhaz
 dropbox /Users/mattmirande/Dropbox
 mamp /Applications/MAMP
-proto /Users/mattmirande/Sites/chzbrgr/proto
 alpha /Users/mattmirande/Sites/chzbrgr/alpha
 dotfiles /Users/mattmirande/.dotfiles
 alpha /Users/mattmirande/Sites/chzbrgr/alpha
-marklet /Users/mattmirande/Sites/chzbrgr/marklet
+proto /Users/mattmirande/Sites/chzbrgr/proto
+sites /Users/mattmirande/Sites
 ut /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes/Unified
 utpub /Users/mattmirande/Sites/chzbrgr/UTPublisher
-
-iphone /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes/UTiPhone
-utiphone /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes/UTiPhoneSplash
