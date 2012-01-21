@@ -52,6 +52,15 @@ setReleaseTag(){
 	fi
 }
 
+successMsgAni(){
+	echo -ne '::...preparing to release...  ( •_•)      \r'
+	sleep 0.4
+	echo -ne '::...preparing to release...  ( •_•)>⌐■-■ \r'
+	sleep 0.2
+	echo -ne '::...preparing to release...  (⌐■_■)      \r'
+	sleep 0.7
+}
+
 abortMsgAni(){
 	echo -ne '::...aborting release...  (°_°) ┳━┳\r'
 	sleep 0.4
@@ -94,6 +103,9 @@ then
 	abortMsgAni
 	exit
 fi
+
+# ice cold!
+successMsgAni
 
 # find and replace release tags
 echo "::...updating theme version"
