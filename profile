@@ -15,7 +15,7 @@ alias edit-hosts="start-mvim /private/etc/hosts sudo"
 alias exp="open"
 
 #environment variables
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.3-p0/bin":"/usr/local/Cellar/ruby/1.9.2-p290/bin":$PATH
 
 #helpers
