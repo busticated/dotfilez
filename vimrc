@@ -157,7 +157,7 @@ au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " chz projects tabbing
 au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
-au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
