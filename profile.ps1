@@ -9,6 +9,7 @@ $DROPBOX = $HOME + "\Documents\My Dropbox"
 $DEV = "C:\dev"
 $CHZ = $DEV + "\chzbrgr\ChzClean"
 $CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
+$CHZHIPSTERS = $DEV + "\chzbrgr\ChzHipsters"
 
 # Imports =======================================================================#
 import-module $DEV\dotfilez\powershell\utils.psm1
@@ -32,7 +33,8 @@ Set-EnvPath @(
 	"C:\Program Files (x86)\Git\bin",
 	"C:\Program Files (x86)\Vim\vim73",
 	"C:\ctags58",
-	"$HOME\AppData\Local\Google\Chrome\Application\"
+	"$HOME\AppData\Local\Google\Chrome\Application\",
+	"C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\"
 )
 
 # Aliases =======================================================================#
@@ -43,7 +45,8 @@ Set-Alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
 function cd-dropbox { cd $DROPBOX }
 function cd-dev { cd $DEV }
 function cd-chz { cd $CHZ }
-function cd-chzmirande { cd $CHZMIRANDE }
+function cd-chzMirande { cd $CHZMIRANDE }
+function cd-chzHipsters { cd $CHZHIPSTERS }
 function edit-hgrc { notepad "$HOME\Mercurial.ini" }
 function edit-profile { notepad $PROFILE }
 function hg-latest( $count ){
