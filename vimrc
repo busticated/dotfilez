@@ -39,6 +39,7 @@ Bundle 'millermedeiros/vim-statline'
 Bundle 'othree/html5.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sickill/vim-pasta'
+Bundle 'groenewege/vim-less'
 
 " Basics
 set number
@@ -58,6 +59,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+
+" Folding
+set foldopen=all
 
 " Searching
 set hlsearch
@@ -95,6 +99,13 @@ map <Leader><Leader> :ZoomWin<CR>
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
+
+" Snippets
+let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/,~/.dotfiles/vim/snippets/"
+
+"if has("mac")
+"    call ExtractSnipsFile("~/.dotfiles/snippets/", "javascript")
+
 
 " Remember last location in file
 if has("autocmd")
@@ -144,8 +155,9 @@ au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
 " js tabbing
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
-" chz ut project tabbing
+" chz projects tabbing
 au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start

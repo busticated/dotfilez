@@ -2,7 +2,7 @@
 latest = !if [ -z $1 ]; then count=5; else count=$1; fi; hg log --limit $count
 conflicts = resolve -l
 resolved = resolve -m
-release = !~/.dotfiles/utils/chz-releasetagger.sh
+release = !~/.dotfiles/bash/chz-ut-releasetagger.sh
 diffit = diff -c
 
 [ui]

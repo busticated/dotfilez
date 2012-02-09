@@ -2,7 +2,7 @@
 # PowerShell Utils Module
 #================================================================================#
 
-# allow the mklink under PowerShell
+# allow the mklink command (creates symlinks) under PowerShell
 function mklink { cmd /c mklink $args }
 
 # open file explorer in this directory
