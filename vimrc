@@ -9,13 +9,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-"Bundle 'wycats/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
 "Bundle 'hallettj/jslint.vim'
-Bundle 'vim-scripts/jshint.vim'
+" Bundle 'vim-scripts/jshint.vim'
+Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'robgleeson/hammer.vim'
 Bundle 'pangloss/vim-javascript'
