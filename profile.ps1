@@ -7,7 +7,7 @@ $PROFILE = $HOME + "\Documents\WindowsPowerShell\profile.ps1"
 $NODEMODULES = $HOME + "\AppData\Roaming\npm\node_modules"
 $DROPBOX = $HOME + "\Documents\My Dropbox"
 $DEV = "C:\dev"
-$CHZ = $DEV + "\chzbrgr\ChzClean"
+$CHZ = $DEV + "\chzbrgr\"
 $CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
 $CHZHIPSTERS = $DEV + "\chzbrgr\ChzHipsters"
 
@@ -40,6 +40,7 @@ Set-EnvPath @(
 # Aliases =======================================================================#
 Set-Alias installutil (join-path (& Get-FrameworkDirectory) "installutil.exe")
 Set-Alias msbuild (join-path (& Get-FrameworkDirectory) "msbuild.exe")
+Set-Alias npp "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 # Helper Funcs ==================================================================#
 function cd-dropbox { cd $DROPBOX }
@@ -47,14 +48,25 @@ function cd-dev { cd $DEV }
 function cd-chz { cd $CHZ }
 function cd-chzMirande { cd $CHZMIRANDE }
 function cd-chzHipsters { cd $CHZHIPSTERS }
-function edit-hgrc { notepad "$HOME\Mercurial.ini" }
-function edit-profile { notepad $PROFILE }
+function edit-hgrc { npp "$HOME\Mercurial.ini" }
+function edit-profile { npp $PROFILE }
 function hg-latest( $count ){
 	if( ! $count ){
 		$count = 5
 	}
 	hg log --limit $count
 }
+
+function Habanero( $projDir ) {
+	if ( -not ( test-path "$CHZ\$projDir" ) ) {
+		write-host "Invalid project directory - $projDir does not exist";
+		return
+	}
+	#todo - parse my habanero config to change the "mineCodebase" setting
+	cd "$CHZ\Habanero"
+	& .\RunAll.ps1 .\Configs\mirande.ps1
+}
+
 function Build-JS( $buildFile ) { node "$NODEMODULES\requirejs\bin\r.js" -o $buildFile }
 
 #bah... msbuild does this already by default... might be more helpful to optionally
