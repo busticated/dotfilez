@@ -23,3 +23,19 @@ export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.3-p0/
 function start-mvim(){
     $2 mvim -c ":lcd %:p:h" $1
 }
+function throttle-bandwidth(){
+    add=${1:-true}
+    speed=${2:-500}
+    port=${3:-80}
+
+    if [ $add == true ]
+    then
+        sudo ipfw pipe 1 config bw $speed"KByte/s"
+        sudo ipfw add 1 pipe 1 src-port $port
+        echo "speed:" $speed"KByte/s"
+        echo "port: " $port
+    else
+        sudo ipfw delete 1
+        echo "filter removed from port: " $port
+    fi
+}

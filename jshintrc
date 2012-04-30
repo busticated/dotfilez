@@ -54,7 +54,5 @@
 	"wsh": false,
 
 	"nomen": false,
-	"onevar": false,
-	"passfail": fale,
-	"white": true
+	"onevar": false
 }
