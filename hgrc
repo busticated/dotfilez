@@ -4,6 +4,7 @@ conflicts = resolve -l
 resolved = resolve -m
 release = !~/.dotfiles/bash/chz-ut-releasetagger.sh
 diffit = diff -c
+nudge = push --rev .
 
 [ui]
 merge = mvimdiff
