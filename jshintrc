@@ -8,7 +8,7 @@
 	"curly": true,
 	"eqeqeq": true,
 	"forin": true,
-	"immed": true,
+	"immed": false,
 	"latedef": true,
 	"newcap": true,
 	"noarg": true,
