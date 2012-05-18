@@ -9,7 +9,6 @@ $DROPBOX = $HOME + "\Documents\My Dropbox"
 $DEV = "C:\dev"
 $CHZ = $DEV + "\chzbrgr\"
 $CHZMIRANDE = $DEV + "\chzbrgr\ChzMirande"
-$CHZHIPSTERS = $DEV + "\chzbrgr\ChzHipsters"
 
 # Imports =======================================================================#
 import-module $DEV\dotfilez\powershell\utils.psm1
@@ -47,7 +46,6 @@ function cd-dropbox { cd $DROPBOX }
 function cd-dev { cd $DEV }
 function cd-chz { cd $CHZ }
 function cd-chzMirande { cd $CHZMIRANDE }
-function cd-chzHipsters { cd $CHZHIPSTERS }
 function edit-hgrc { npp "$HOME\Mercurial.ini" }
 function edit-profile { npp $PROFILE }
 function hg-latest( $count ){
