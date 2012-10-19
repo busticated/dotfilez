@@ -17,7 +17,7 @@ alias exp="open"
 
 #environment variables
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
-export PATH="/usr/local/share/python":"/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.3-p194/bin":"/usr/local/Cellar/ruby/1.9.3-p0/bin":"/usr/local/Cellar/ruby/1.9.2-p290/bin":$PATH
+export PATH="/usr/local/share/python":"/usr/local/bin":"/usr/local/sbin":"/usr/local/Cellar/ruby/1.9.3-p194/bin":"/usr/local/Cellar/ruby/1.9.3-p286/bin":$PATH
 
 #helpers
 function start-mvim(){
