@@ -5,3 +5,5 @@
 	email = itsbusticated@gmail.com
 [github]
 	user = busticated
+[push]
+	default = matching
