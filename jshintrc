@@ -26,7 +26,7 @@
 	"eqnull": false,
 	"es5" : false,
 	"evil": false,
-	"expr": false,
+	"expr": true,
 	"globalstrict": false,
 	"iterator": false,
 	"lastsemic": false,
