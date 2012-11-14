@@ -24,6 +24,7 @@ node_modules/*
 *.log
 *.sql
 *.sqlite
+*.rdb
 
 # OS generated files #
 ######################
