@@ -130,6 +130,9 @@ au BufRead,BufNewFile *.txt    set filetype=markdown
 " add json syntax highlighting
 au BufNewFile,BufRead *.{js,json} set ft=javascript
 
+" recognize {LESS} files
+au BufNewFile,BufRead *.less set filetype=less
+
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
@@ -141,6 +144,9 @@ au FileType html set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandta
 
 " css filetype settings
 au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
+
+" less tabbing
+au FileType less set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " js tabbing
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
