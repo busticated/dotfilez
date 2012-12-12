@@ -81,6 +81,7 @@ endif
 
 " Default font & font size
 set guifont=Inconsolata:h13
+" set guifont=Source\ Code\ Pro:h13
 
 " ConqueTerm wrapper
 " function! StartTerm()
