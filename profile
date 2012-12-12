@@ -8,8 +8,6 @@ alias cd-bsted="cd /Users/mattmirande/Sites/busticated2.0/"
 alias cd-sites="cd /Users/mattmirande/Sites/"
 alias cd-dropbox="cd /Users/mattmirande/Dropbox/"
 alias cd-chz="cd /Users/mattmirande/Sites/chzbrgr/"
-alias cd-chzUT="cd /Users/mattmirande/Sites/chzbrgr/icanhaz/wp-content/themes/Unified/"
-alias cd-chzOnO="cd /Users/mattmirande/Sites/chzbrgr/OnOProtos"
 alias edit-profile="start-mvim /Users/mattmirande/.dotfiles/profile"
 alias edit-vimrc="start-mvim /Users/mattmirande/.dotfiles/vimrc"
 alias edit-hosts="start-mvim /private/etc/hosts sudo"
@@ -39,3 +37,12 @@ function throttle-bandwidth(){
         echo "filter removed from port: " $port
     fi
 }
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
