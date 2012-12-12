@@ -1,5 +1,6 @@
 [core]
 	excludesfile = /Users/mattmirande/.gitignore_global
+	editor = mvim -f
 [user]
 	name = busticated
 	email = itsbusticated@gmail.com
