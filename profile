@@ -38,6 +38,11 @@ function throttle-bandwidth(){
     fi
 }
 
+# bash completion helper (see: http://bash-completion.alioth.debian.org/ )
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
 # {{{
 # Node Completion - Auto-generated, do not touch.
 shopt -s progcomp
