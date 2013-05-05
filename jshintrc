@@ -1,5 +1,5 @@
 {
-	"predef": [
+	"globals": [
 		"define",
 		"require"
 	],
@@ -8,7 +8,7 @@
 	"curly": true,
 	"eqeqeq": true,
 	"forin": true,
-	"immed": false,
+	"immed": true,
 	"latedef": true,
 	"newcap": true,
 	"noarg": true,
@@ -17,13 +17,16 @@
 	"plusplus": true,
 	"regexp": true,
 	"undef": true,
+	"unused": true,
 	"strict": true,
 	"trailing": true,
+	"quotmark": "single",
+	"smarttabs": false,
 
 	"asi": false,
 	"boss" : false,
 	"debug": false,
-	"eqnull": false,
+	"eqnull": true,
 	"es5" : false,
 	"evil": false,
 	"expr": true,
