@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'hallettj/jslint.vim'
 Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'pangloss/vim-javascript'
@@ -31,6 +30,7 @@ Bundle 'othree/html5.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'groenewege/vim-less'
+Bundle 'tomtom/tcomment_vim'
 
 " Basics
 set number
