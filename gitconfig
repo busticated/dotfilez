@@ -8,3 +8,5 @@
 	user = busticated
 [push]
 	default = matching
+[alias]
+    pall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
