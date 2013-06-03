@@ -21,6 +21,8 @@ files=(
     'jshintrc'
     'NERDTreeBookmarks'
 )
+# TODO: Make Dirs ~/.vim/backup, ~/.vim/bundle, ~/.vim/tmp
+# TODO: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 linkUserConfigFiles ${files[@]}
 
 # setup symlinks to misc configs
