@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#TODO use pushd & popd instead of cd
 set -e         # exit on error
 set -o nounset # disallow unset vars
 

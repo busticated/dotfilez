@@ -9,4 +9,4 @@
 [push]
 	default = matching
 [alias]
-    pall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
+    pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
