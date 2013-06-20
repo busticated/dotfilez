@@ -185,7 +185,7 @@ vmap <C-Down> ]egv
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs = 1
 let g:syntastic_quiet_warnings = 1
-let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_conf = "~/.dotfiles/jshintrc"
 
 " gist-vim defaults
