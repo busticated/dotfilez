@@ -12,6 +12,7 @@ alias edit-profile="start-mvim /Users/mattmirande/.dotfiles/profile"
 alias edit-vimrc="start-mvim /Users/mattmirande/.dotfiles/vimrc"
 alias edit-hosts="start-mvim /private/etc/hosts sudo"
 alias exp="open"
+alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/6.1/Applications/"
 
 #environment variables
 export NODE_ENV="development"
