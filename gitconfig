@@ -10,3 +10,4 @@
 	default = matching
 [alias]
     pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
+    ignored = clean -dXn
