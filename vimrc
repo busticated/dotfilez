@@ -50,6 +50,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set colorcolumn=80
 
 " Folding
 set foldopen=all
