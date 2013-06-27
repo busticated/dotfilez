@@ -10,7 +10,7 @@ linkUserConfigFiles(){
     done
 }
 
-# Setup symlinks for user config files
+# user config files
 files=(
     'profile'
     'gvimrc'
@@ -21,8 +21,18 @@ files=(
     'jshintrc'
     'NERDTreeBookmarks'
 )
-# TODO: Make Dirs ~/.vim/backup, ~/.vim/bundle, ~/.vim/tmp
-# TODO: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# dirs vim requires
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/tmp
+
+# grab vundle if needed
+if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
+# setup symlinks for user config files
 linkUserConfigFiles ${files[@]}
 
 # setup symlinks to misc configs
