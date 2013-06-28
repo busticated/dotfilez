@@ -11,12 +11,12 @@ alias edit-vimrc="start-mvim /Users/mattmirande/.dotfiles/vimrc"
 alias edit-hosts="start-mvim /private/etc/hosts sudo"
 alias exp="open"
 alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/6.1/Applications/"
-alias killAllNode="ps -Ax | grep '[n]ode'| cut -f 2 -d ' '| xargs kill"
+alias kill-node="ps -Ax | grep '[n]ode'| cut -f 2 -d ' '| xargs kill"
 
 #environment variables
 export NODE_ENV="development"
 export NODE_PATH="/usr/local/Cellar/node:/usr/local/share/npm/lib/node_modules"
-export PATH="/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":$PATH
+export PATH="bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":$PATH
 
 #helpers
 function start-mvim(){
