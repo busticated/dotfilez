@@ -16,7 +16,7 @@ alias kill-node="ps -Ax | grep '[n]ode'| cut -f 2 -d ' '| xargs kill"
 #environment variables
 export NODE_ENV="development"
 export NODE_PATH="/usr/local/Cellar/node:/usr/local/share/npm/lib/node_modules"
-export PATH="bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":$PATH
+export PATH="bin":"node_modules/.bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":$PATH
 
 #helpers
 function start-mvim(){
