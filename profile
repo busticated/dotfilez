@@ -6,12 +6,12 @@ alias cd-bsted="cd /Users/mattmirande/Sites/busticated2.0/"
 alias cd-sites="cd /Users/mattmirande/Sites/"
 alias cd-dropbox="cd /Users/mattmirande/Dropbox/"
 alias cd-mombo="cd /Users/mattmirande/Sites/mombo-labs/"
-alias edit-profile="start-mvim /Users/mattmirande/.dotfiles/profile"
-alias edit-vimrc="start-mvim /Users/mattmirande/.dotfiles/vimrc"
-alias edit-hosts="start-mvim /private/etc/hosts sudo"
+alias edit-profile="startMvim /Users/mattmirande/.dotfiles/profile"
+alias edit-vimrc="startMvim /Users/mattmirande/.dotfiles/vimrc"
+alias edit-hosts="startMvim /private/etc/hosts sudo"
 alias exp="open"
-alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/6.1/Applications/"
-alias kill-node="ps -Ax | grep '[n]ode'| cut -f 2 -d ' '| xargs kill"
+alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/"
+alias kill-node="ps -Ax | grep '[n]ode'| cut -f 1 -d ' '| xargs kill"
 
 #environment variables
 export NODE_ENV="development"
@@ -19,10 +19,11 @@ export NODE_PATH="/usr/local/Cellar/node:/usr/local/share/npm/lib/node_modules"
 export PATH="bin":"node_modules/.bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":$PATH
 
 #helpers
-function start-mvim(){
+function startMvim(){
     $2 mvim -c ":lcd %:p:h" $1
 }
-function throttle-bandwidth(){
+
+function throttleBandwidth(){
     add=${1:-true}
     speed=${2:-500}
     port=${3:-80}
