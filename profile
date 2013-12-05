@@ -12,12 +12,13 @@ alias edit-hosts="startMvim /private/etc/hosts sudo"
 alias exp="open"
 alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/"
 alias kill-node="ps -Ax | grep '[n]ode'| cut -f 1 -d ' '| xargs kill"
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 #environment variables
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
 export NODE_PATH="/usr/local/Cellar/node:/usr/local/share/npm/lib/node_modules"
-export PATH="bin":"node_modules/.bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/share/npm/bin":"/usr/local/Cellar/ruby/1.9.3-p362/bin":"/usr/local/share/android-sdk/platform-tools":$PATH
+export PATH="bin":"/usr/local/bin":"/usr/local/sbin":"node_modules/.bin":"/usr/local/share/npm/bin":"/usr/local/opt/ruby/bin":"/Applications/Postgres.app/Contents/MacOS/bin":"/usr/local/share/android-sdk/platform-tools":$PATH
 
 #helpers
 function startMvim(){
