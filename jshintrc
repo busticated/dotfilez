@@ -1,11 +1,29 @@
 {
-	"globals": [
-		"define",
-		"require"
-	],
+	"globals": {
+		"define": false,
+		"require": false,
+		"jake": false,
+		"desc": false,
+		"task": false,
+		"fail": false,
+		"complete": false,
+		"directory": false,
+		"namespace": false,
+		"chai": false,
+		"it": false,
+		"should": false,
+		"mocha": false,
+		"describe": false,
+		"before": false,
+		"after": false,
+		"beforeEach": false,
+		"afterEach": false,
+		"sinon": false,
+		"sandbox": false
+	},
 
 	"bitwise": true,
-	"camelcase": false,
+	"camelcase": true,
 	"curly": true,
 	"eqeqeq": false,
 	"forin": true,

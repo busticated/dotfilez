@@ -11,12 +11,9 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'walm/jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/taglist.vim'
-"Bundle 'garbas/vim-snipmate'
-Bundle 'ervandew/snipmate.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mileszs/ack.vim'
@@ -31,6 +28,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'groenewege/vim-less'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'wesQ3/vim-windowswap'
 
 " Basics
 set number
