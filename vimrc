@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/taglist.vim'
