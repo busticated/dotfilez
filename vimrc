@@ -30,6 +30,8 @@ Bundle 'sickill/vim-pasta'
 Bundle 'groenewege/vim-less'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'wesQ3/vim-windowswap'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'derekwyatt/vim-scala'
 
 " Basics
 set number
