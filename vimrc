@@ -1,37 +1,41 @@
+" Vundle configs --------------------------------------------------------------
 set nocompatible
-filetype on   " required for Vundle!
-filetype off  " required for Vundle!
+filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Vundle
-Bundle 'gmarik/vundle'
+" Vundle itself
+Plugin 'gmarik/Vundle.vim'
 
 " Bundles
-Bundle 'ervandew/supertab'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/base16-vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'pangloss/vim-javascript'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'Raimondi/delimitMate'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'millermedeiros/vim-statline'
-Bundle 'othree/html5.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sickill/vim-pasta'
-Bundle 'groenewege/vim-less'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'wesQ3/vim-windowswap'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'derekwyatt/vim-scala'
+Plugin 'ervandew/supertab'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'Raimondi/delimitMate'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'millermedeiros/vim-statline'
+Plugin 'othree/html5.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sickill/vim-pasta'
+Plugin 'groenewege/vim-less'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'derekwyatt/vim-scala'
+
+call vundle#end()
+filetype plugin indent on " load plugin & indent settings for detected filetype
+" End Vundle configs ----------------------------------------------------------
 
 " Basics
 set number
@@ -169,9 +173,6 @@ au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos* set softtabstop=4 tabstop=4 shift
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on " required for Vundle!
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
