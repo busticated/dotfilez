@@ -118,8 +118,11 @@ endfunction
 " make uses real tabs
 au FileType make set noexpandtab
 
+" bash
+au BufRead,BufNewFile *bash* set filetype=sh
+
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set filetype=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupMarkup()
@@ -129,10 +132,13 @@ au BufRead,BufNewFile *.txt    set filetype=markdown
 " au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " add json syntax highlighting
-au BufNewFile,BufRead *.{js,json} set ft=javascript
+au BufNewFile,BufRead *.{js,json} set filetype=javascript
 
 " recognize {LESS} files
 au BufNewFile,BufRead *.less set filetype=less
+
+" sh tabbing
+au FileType sh set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
@@ -151,6 +157,9 @@ au FileType less set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " js tabbing
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" scala tabbing
+au FileType scala set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " chz projects tabbing
 au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
