@@ -286,6 +286,14 @@ function! Find(...)
 endfunction
 command! -nargs=* Find :call Find(<f-args>)
 
+" syntax debugging
+function! SynStack()
+    if !exists('*synstack')
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
+endfunc
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
