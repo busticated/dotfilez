@@ -11,4 +11,4 @@
 [alias]
     pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
     ignored = clean -dXn
-    release = !git checkout production && git merge master && git push && git checkout master
+    release = !git checkout production && git merge master && git push origin production && git checkout demo && git merge master && git push origin demo && git checkout master
