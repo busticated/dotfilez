@@ -153,10 +153,10 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
 " html filetype settings
-au FileType html set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
+au FileType html set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 expandtab
 
 " css filetype settings
-au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 noexpandtab
+au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 expandtab
 
 " less tabbing
 au FileType less set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
