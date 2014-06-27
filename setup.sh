@@ -19,6 +19,7 @@ files=(
     'gitconfig'
     'gitignore_global'
     'jshintrc'
+    'ackrc'
     'NERDTreeBookmarks'
 )
 
