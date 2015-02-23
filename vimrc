@@ -184,19 +184,11 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " Enable syntastic syntax checking
-let g:syntastic_enable_signs = 1
-let g:syntastic_quiet_messages = {'level': ['warnings', 'errors']}
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_quiet_messages = {'level': ['warnings']}
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_conf = "~/.dotfiles/jshintrc"
-
-" gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
+" let g:syntastic_javascript_jshint_conf = "~/.dotfiles/jshintrc"
+" let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc"
 
 " Use modeline overrides
 set modeline
@@ -215,9 +207,6 @@ let g:solarized_termcolors = 256
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Turn off jslint errors by default
-" let g:JSLintHighlightErrorLine = 0
 
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
