@@ -110,17 +110,6 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-function! s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
-
-function! s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
-endfunction
-
 " make uses real tabs
 au FileType make set noexpandtab
 
