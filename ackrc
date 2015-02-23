@@ -1,0 +1,4 @@
+--ignore-dir=js-built
+--ignore-file=is:bundle.js
+--ignore-file=is:steller.js
+--ignore-file=ext:log
