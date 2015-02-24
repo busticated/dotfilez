@@ -14,6 +14,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
@@ -127,7 +128,7 @@ au BufRead,BufNewFile *.txt    set filetype=markdown
 " au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " add json syntax highlighting
-au BufNewFile,BufRead *.{js,json} set filetype=javascript
+au BufNewFile,BufRead *.{js} set filetype=javascript
 
 " recognize {LESS} files
 au BufNewFile,BufRead *.less set filetype=less
@@ -184,11 +185,10 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " Enable syntastic syntax checking
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_quiet_messages = {'level': ['warnings']}
 let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_javascript_jshint_conf = "~/.dotfiles/jshintrc"
-" let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc"
+
+" disable 'concealing' for vim-json JSON syntax plugin
+let g:vim_json_syntax_conceal = 0
 
 " Use modeline overrides
 set modeline
