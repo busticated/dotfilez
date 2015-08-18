@@ -20,6 +20,13 @@ export NODE_ENV="development"
 export NODE_PATH="/usr/local/Cellar/node:/usr/local/share/npm/lib/node_modules"
 export PATH="bin":"/usr/local/bin":"/usr/local/sbin":"node_modules/.bin":"/usr/local/share/npm/bin":"/usr/local/opt/ruby/bin":"/usr/local/share/android-sdk/platform-tools":$PATH
 
+#history
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=10000                    # number of lines of history in memory
+export HISTFILESIZE=100000               # number of line of history in file
+shopt -s histappend                      # append to history, don't overwrite it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # save and reload the history after each command finishes
+
 #helpers
 function startMvim(){
     $2 mvim -c ":lcd %:p:h" $1
