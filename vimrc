@@ -205,7 +205,7 @@ set modelines=10
 color solarized
 colorscheme solarized
 syntax enable
-set background=dark
+set background=light
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 256
 "let g:solarized_visibility = "high"
