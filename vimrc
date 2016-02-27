@@ -185,7 +185,14 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " Enable syntastic syntax checking
-let g:syntastic_javascript_checkers = ['jshint']
+function! HasLintRC(file, dir)
+    return findfile(a:file, escape(a:dir, ' ') . ';') !=# ''
+endfunction
+
+autocmd BufNewFile,BufReadPre *.js  let b:syntastic_checkers =
+    \ HasLintRC('.eslintrc.js', expand('<amatch>:h')) ? ['eslint'] :
+    \ HasLintRC('.jshintrc', expand('<amatch>:h')) ? ['jshint'] :
+    \ ['standard']
 
 " disable 'concealing' for vim-json JSON syntax plugin
 let g:vim_json_syntax_conceal = 0
