@@ -130,6 +130,9 @@ au BufRead,BufNewFile *.txt    set filetype=markdown
 " add json syntax highlighting
 au BufNewFile,BufRead *.{js} set filetype=javascript
 
+" recognize Jakefile files
+au BufNewFile,BufRead {Jakefile} set filetype=javascript
+
 " recognize {LESS} files
 au BufNewFile,BufRead *.less set filetype=less
 
@@ -189,7 +192,7 @@ function! HasLintRC(file, dir)
     return findfile(a:file, escape(a:dir, ' ') . ';') !=# ''
 endfunction
 
-autocmd BufNewFile,BufReadPre *.js  let b:syntastic_checkers =
+autocmd BufNewFile,BufReadPre {Jakefile,*.js}  let b:syntastic_checkers =
     \ HasLintRC('.eslintrc.js', expand('<amatch>:h')) ? ['eslint'] :
     \ HasLintRC('.jshintrc', expand('<amatch>:h')) ? ['jshint'] :
     \ ['standard']
