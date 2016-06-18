@@ -286,3 +286,6 @@ endfunc
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" macros
+let @j='''<,''>s/"\(.*\)":/\1:/g''<,''>s/''/\''/ge''<,''>s/"/''/ge"nohlsearch'
