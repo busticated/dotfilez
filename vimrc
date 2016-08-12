@@ -33,6 +33,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'hrj/vim-DrawIt'
 
 call vundle#end()
 filetype plugin indent on " load plugin & indent settings for detected filetype
