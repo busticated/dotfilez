@@ -1,5 +1,4 @@
-dotfiles /Users/mattmirande/.dotfiles
-dropbox /Users/mattmirande/Dropbox
-mombo /Users/mattmirande/Sites/mombo-labs
-mombo-labs /Users/mattmirande/Sites/mombo-labs
-sites /Users/mattmirande/Sites
+dotfiles ~/.dotfiles
+sites ~/Sites
+bust ~/Sites/bust
+
