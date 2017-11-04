@@ -1,4 +1,5 @@
 dotfiles ~/.dotfiles
 sites ~/Sites
 bust ~/Sites/bust
+particle ~/Sites/particle
 
