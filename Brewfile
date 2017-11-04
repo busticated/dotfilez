@@ -11,5 +11,6 @@ brew node@8
 brew postgresql
 brew python3
 brew redis
+brew rbenv
 brew ruby
 brew wrk
