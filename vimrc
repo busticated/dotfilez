@@ -12,9 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
@@ -22,18 +20,13 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'tpope/vim-liquid'
 Plugin 'w0rp/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'millermedeiros/vim-statline'
-Plugin 'othree/html5.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sickill/vim-pasta'
-Plugin 'groenewege/vim-less'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'wesQ3/vim-windowswap'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'hrj/vim-DrawIt'
 Plugin 'yssl/QFEnter'
 
@@ -104,13 +97,6 @@ map <Leader><Leader> :ZoomWin<CR>
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
-" Snippets
-let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/,~/.dotfiles/vim/snippets/"
-
-"if has("mac")
-"    call ExtractSnipsFile("~/.dotfiles/snippets/", "javascript")
-
-
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -123,24 +109,8 @@ au FileType make set noexpandtab
 " bash
 au BufRead,BufNewFile *bash* set filetype=sh
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set filetype=ruby
-
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupMarkup()
-
-" treat text files as markdown
-au BufRead,BufNewFile *.txt    set filetype=markdown
-" au BufRead,BufNewFile *.txt call s:setupWrapping()
-
-" add json syntax highlighting
-au BufNewFile,BufRead *.{js} set filetype=javascript
-
 " recognize Jakefile files
 au BufNewFile,BufRead {Jakefile} set filetype=javascript
-
-" recognize {LESS} files
-au BufNewFile,BufRead *.less set filetype=less
 
 " sh tabbing
 au FileType sh set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
@@ -196,7 +166,7 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" disable 'concealing' for vim-json JSON syntax plugin
+" disable 'concealing' for vim-json JSON syntax (via sheerun/vim-polyglot plugin)
 let g:vim_json_syntax_conceal = 0
 
 " Use modeline overrides
