@@ -15,10 +15,8 @@ files=(
     'profile'
     'gvimrc'
     'vimrc'
-    'hgrc'
     'gitconfig'
     'gitignore_global'
-    'jshintrc'
     'ackrc'
     'NERDTreeBookmarks'
 )
@@ -35,7 +33,4 @@ fi
 
 # setup symlinks for user config files
 linkUserConfigFiles ${files[@]}
-
-# setup symlinks to misc configs
-ln -siv $DOTFILESDIR/apache/httpd.conf /Applications/MAMP/conf/apache/httpd.conf
 exit
