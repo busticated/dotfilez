@@ -1,0 +1,15 @@
+brew ack
+brew bash-completion
+brew cowsay
+brew git
+brew jq
+brew jsonlint
+brew macvim
+brew node
+brew node@6
+brew node@8
+brew postgresql
+brew python3
+brew redis
+brew ruby
+brew wrk
