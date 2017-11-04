@@ -22,6 +22,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'tpope/vim-liquid'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'scrooloose/nerdtree'
@@ -169,6 +170,9 @@ au FileType scala set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 " chz projects tabbing
 au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+
+" liquid template tabbing
+au FileType liquid set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
