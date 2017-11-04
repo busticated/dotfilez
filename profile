@@ -2,15 +2,12 @@
 export PS1="\u.........\d..\t..........(\w)\n>>"
 
 #aliases
-alias cd-bsted="cd /Users/mattmirande/Sites/busticated2.0/"
 alias cd-sites="cd /Users/mattmirande/Sites/"
-alias cd-dropbox="cd /Users/mattmirande/Dropbox/"
-alias cd-mombo="cd /Users/mattmirande/Sites/mombo-labs/"
 alias edit-profile="startMvim /Users/mattmirande/.dotfiles/profile"
 alias edit-vimrc="startMvim /Users/mattmirande/.dotfiles/vimrc"
 alias edit-hosts="startMvim /private/etc/hosts sudo"
 alias exp="open"
-alias exp-iosapps="exp ~/Library/Application\ Support/iPhone\ Simulator/"
+alias exp-iossim="exp ~/Library/Application\ Support/iPhone\ Simulator/"
 alias kill-node="ps -Ax | grep '[n]ode'| cut -f 1 -d ' '| xargs kill"
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -52,12 +49,3 @@ function throttleBandwidth(){
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
