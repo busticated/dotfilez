@@ -23,8 +23,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'tpope/vim-liquid'
-Plugin 'scrooloose/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'millermedeiros/vim-statline'
 Plugin 'othree/html5.vim'
@@ -196,16 +194,6 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
-" Enable syntastic syntax checking
-function! HasLintRC(file, dir)
-    return findfile(a:file, escape(a:dir, ' ') . ';') !=# ''
-endfunction
-
-autocmd BufNewFile,BufReadPre {Jakefile,*.js}  let b:syntastic_checkers =
-    \ HasLintRC('.eslintrc.js', expand('<amatch>:h')) ? ['eslint'] :
-    \ HasLintRC('.jshintrc', expand('<amatch>:h')) ? ['jshint'] :
-    \ ['standard']
 
 " disable 'concealing' for vim-json JSON syntax plugin
 let g:vim_json_syntax_conceal = 0
