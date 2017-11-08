@@ -26,6 +26,9 @@ mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp
 
+# dirs mongodb requires
+sudo mkdir -p /data/db
+
 # grab vundle if needed
 if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
     echo ":::: Installing vim vundle plugin manager..."
