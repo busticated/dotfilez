@@ -30,7 +30,7 @@ mkdir -p ~/.vim/tmp
 sudo mkdir -p /data/db
 
 # grab vundle if needed
-if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
     echo ":::: Installing vim vundle plugin manager..."
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 else
@@ -39,7 +39,7 @@ fi
 
 # install brew and brewfile bundles
 if [[ $(command -v brew) == "" ]]; then
-    echo "Installing homebrew package manager..."
+    echo ":::: Installing homebrew package manager..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap homebrew/bundle
     brew bundle
