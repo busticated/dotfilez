@@ -136,12 +136,14 @@ au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 " scala tabbing
 au FileType scala set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
-" chz projects tabbing
-au BufRead,BufEnter ~/Sites/chzbrgr/icanhaz/* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
-au BufRead,BufEnter ~/Sites/chzbrgr/OnOProtos* set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+" handlebars tabbing
+au FileType html.handlebars set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " liquid template tabbing
 au FileType liquid set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
+" particle projects tabbing
+au BufRead,BufEnter ~/Sites/particle/* set softtabstop=2 tabstop=2 shiftwidth=2 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
