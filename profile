@@ -45,9 +45,6 @@ function throttleBandwidth(){
     fi
 }
 
-# rbenv
-eval "$(rbenv init -)"
-
 # bash completion helper (see: http://bash-completion.alioth.debian.org/ )
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
