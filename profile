@@ -14,7 +14,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 #environment variables
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
-export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$(brew --prefix ruby)/bin":"node_modules/.bin"
+export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$(brew --prefix ruby)/bin":"node_modules/.bin:$HOME/.rvm/bin"
 
 #history
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
@@ -45,7 +45,11 @@ function throttleBandwidth(){
     fi
 }
 
+# ruby
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # bash completion helper (see: http://bash-completion.alioth.debian.org/ )
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
