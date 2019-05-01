@@ -85,6 +85,7 @@ let NERDTreeAutoCenter=0
 let NERDChristmasTree=1
 let NERDTreeChDirMode=2
 let NERDTreeDirArrows=1
+let NERDTreeIgnore = ['^node_modules$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T plugin configuration
