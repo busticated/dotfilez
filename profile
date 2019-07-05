@@ -14,7 +14,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 #environment variables
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
-export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$(brew --prefix ruby)/bin":"node_modules/.bin:$HOME/.rvm/bin"
+export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin":"node_modules/.bin:$HOME/.rvm/bin"
 
 #history
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
