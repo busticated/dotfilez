@@ -23,6 +23,10 @@ export HISTFILESIZE=100000               # number of line of history in file
 shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # save and reload the history after each command finishes
 
+#gpg
+GPG_TTY=$(tty)
+export GPG_TTY
+
 #helpers
 function startMvim(){
     $2 mvim -c ":lcd %:p:h" $1
