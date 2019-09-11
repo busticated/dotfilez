@@ -9,8 +9,9 @@
 [push]
 	default = matching
 [alias]
-    pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
-    ignored = clean -dXn
-    hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
-    release = !git checkout production && git merge master && git push origin production && git checkout demo && git merge master && git push origin demo && git checkout master
-    recommit = "!f() { for file in $(git show --pretty="format:" --name-only $1); do git add -p $file; done }; f"
+	pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
+	ignored = clean -dXn
+	hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+	recommit = "!f() { for file in $(git show --pretty="format:" --name-only $1); do git add -p $file; done }; f"
+	mirror-update = !git fetch -p origin && git push --mirror
+	grab-pr = "!f() { git fetch origin pull/$1/head:pr/$1; git checkout pr/$1; }; f"
