@@ -17,7 +17,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive' " disabled until this lands --> https://github.com/tpope/vim-fugitive/pull/966
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
 Plugin 'vim-scripts/ZoomWin'
