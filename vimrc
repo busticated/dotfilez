@@ -19,6 +19,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-sleuth'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'w0rp/ale'
 Plugin 'scrooloose/nerdtree'
@@ -144,7 +145,7 @@ au FileType html.handlebars set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 au FileType liquid set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " particle projects tabbing
-au BufRead,BufEnter ~/Sites/particle/* set softtabstop=2 tabstop=2 shiftwidth=2 noexpandtab
+" au BufRead,BufEnter ~/Sites/particle/* set softtabstop=2 tabstop=2 shiftwidth=2 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
