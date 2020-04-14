@@ -22,17 +22,22 @@ files=(
 )
 
 # dirs vim requires
-mkdir -p ~/.vim/backup
-mkdir -p ~/.vim/bundle
-mkdir -p ~/.vim/tmp
+if [ ! -d "$HOME/.vim/backup" ]; then
+    echo ":::: Creating required VIM directories..."
+    mkdir -p ~/.vim/backup
+    mkdir -p ~/.vim/bundle
+    mkdir -p ~/.vim/tmp
+else
+    echo ":::: VIM directories already available. Skipping..."
+fi
 
 # dirs mongodb requires
-sudo mkdir -p /data/db
+sudo mkdir -p ~/mongodata/db
 
 # grab vundle if needed
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
     echo ":::: Installing vim vundle plugin manager..."
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 else
     echo ":::: vim vundle already installed. Skipping..."
 fi
