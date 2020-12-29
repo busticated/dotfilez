@@ -1,29 +1,30 @@
-#handle format
+# prompt
 export PS1="\u.........\d..\t..........(\w)\n>>"
 
-#aliases
-alias cd-sites="cd /Users/mattmirande/Sites/"
-alias edit-profile="startMvim /Users/mattmirande/.dotfiles/profile"
-alias edit-vimrc="startMvim /Users/mattmirande/.dotfiles/vimrc"
+# aliases
+alias edit-profile="startMvim ${HOME}/.dotfiles/profile"
+alias edit-zshrc="startMvim ${HOME}/.dotfiles/zshrc"
+alias edit-vimrc="startMvim ${HOME}/.dotfiles/vimrc"
 alias edit-hosts="startMvim /private/etc/hosts sudo"
 alias exp="open"
 alias exp-iossim="exp ~/Library/Application\ Support/iPhone\ Simulator/"
 alias kill-node="ps -Ax | grep '[n]ode'| cut -f 1 -d ' '| xargs kill"
 alias npm-exec='PATH=$(npm bin):$PATH'
 
-#environment variables
+# environment variables
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
-export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin":"node_modules/.bin:$HOME/.rvm/bin"
+export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin":"node_modules/.bin"
 
-#history
+# history
+export HISTFILE="${HOME}/.bash_history"
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=10000                    # number of lines of history in memory
 export HISTFILESIZE=100000               # number of line of history in file
 shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # save and reload the history after each command finishes
 
-#gpg
+# gpg
 export GPG_TTY=$(tty)
 
 #helpers
@@ -48,10 +49,7 @@ function throttleBandwidth(){
     fi
 }
 
-# ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# bash completion helper (see: http://bash-completion.alioth.debian.org/ )
+# bash completion (see: https://github.com/scop/bash-completion)
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
