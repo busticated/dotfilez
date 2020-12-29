@@ -34,6 +34,9 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 # gpg
 export GPG_TTY=$(tty)
 
+# node.js
+eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
+
 # helpers
 function startMvim(){
     $2 mvim -c ":lcd %:p:h" $1

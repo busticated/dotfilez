@@ -27,7 +27,10 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # sa
 # gpg
 export GPG_TTY=$(tty)
 
-#helpers
+# node.js
+eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
+
+# helpers
 function startMvim(){
     $2 mvim -c ":lcd %:p:h" $1
 }
