@@ -100,12 +100,14 @@ touchWithConfirmation ${files[@]}
 echo ":::: Creating required directories..."
 mkdirWithConfirmation ${directories[@]}
 
-# grab vundle if needed
-if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
-    echo ":::: Installing VIM Vundle plugin manager..."
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# grab vim-plug if needed
+vimplugpath="$HOME/.vim/autoload/plug.vim"
+
+if [ ! -d $vimplugpath ]; then
+    echo ":::: Installing VIM plugin manager..."
+    curl -fLo $vimplugpath --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 else
-    echo ":::: VIM Vundle already installed. Skipping..."
+    echo ":::: VIM plugin manager already installed. Skipping..."
 fi
 
 # install brew and brewfile bundles - - - - - - - - - - - - - - - - - - - - - -
