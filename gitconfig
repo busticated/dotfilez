@@ -6,8 +6,16 @@
 	email = itsbusticated@gmail.com
 [github]
 	user = busticated
+[pull]
+	rebase = false
 [push]
 	default = matching
+[tag]
+	forceSignAnnotated = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
 [alias]
 	pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
 	ignored = clean -dXn
@@ -15,3 +23,4 @@
 	recommit = "!f() { for file in $(git show --pretty="format:" --name-only $1); do git add -p $file; done }; f"
 	mirror-update = !git fetch -p origin && git push --mirror
 	grab-pr = "!f() { git fetch origin pull/$1/head:pr/$1; git checkout pr/$1; }; f"
+	ingredients = diff-tree --no-commit-id --name-only -r
