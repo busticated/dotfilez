@@ -24,3 +24,5 @@
 	mirror-update = !git fetch -p origin && git push --mirror
 	grab-pr = "!f() { git fetch origin pull/$1/head:pr/$1; git checkout pr/$1; }; f"
 	ingredients = diff-tree --no-commit-id --name-only -r
+[init]
+	defaultBranch = main
