@@ -1,39 +1,30 @@
-" Vundle configs --------------------------------------------------------------
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle itself
-Plugin 'gmarik/Vundle.vim'
-
-" Bundles
-Plugin 'ervandew/supertab'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'Raimondi/delimitMate'
-Plugin 'mileszs/ack.vim'
-" Plugin 'tpope/vim-fugitive' " disabled until this lands --> https://github.com/tpope/vim-fugitive/pull/966
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-sleuth'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'w0rp/ale'
-Plugin 'scrooloose/nerdtree'
-Plugin 'millermedeiros/vim-statline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sickill/vim-pasta'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'hrj/vim-DrawIt'
-Plugin 'yssl/QFEnter'
-
-call vundle#end()
-filetype plugin indent on " load plugin & indent settings for detected filetype
-" End Vundle configs ----------------------------------------------------------
+" Vim-plug
+call plug#begin('~/.vim/bundle')
+Plug 'junegunn/vim-plug'
+Plug 'ervandew/supertab'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/taglist.vim'
+Plug 'godlygeek/tabular'
+Plug 'Raimondi/delimitMate'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
+Plug 'vim-scripts/ZoomWin'
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'millermedeiros/vim-statline'
+Plug 'kien/ctrlp.vim'
+Plug 'sickill/vim-pasta'
+Plug 'tomtom/tcomment_vim'
+Plug 'wesQ3/vim-windowswap'
+Plug 'hrj/vim-DrawIt'
+Plug 'yssl/QFEnter'
+call plug#end()
 
 " Basics
 set number

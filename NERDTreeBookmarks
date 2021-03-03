@@ -1,5 +1,6 @@
 dotfiles ~/.dotfiles
-sites ~/Sites
-bust ~/Sites/bust
-particle ~/Sites/particle
-
+code ~/code
+bust ~/code/bust
+chz ~/code/chz
+mombo ~/code/mombo
+particle ~/code/particle
