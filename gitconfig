@@ -4,6 +4,8 @@
 [user]
 	name = busticated
 	email = itsbusticated@gmail.com
+	# signingkey = use `gpg --list-secret-keys --keyid-format LONG` to find keyid
+	# see: https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/telling-git-about-your-signing-key
 [github]
 	user = busticated
 [pull]
