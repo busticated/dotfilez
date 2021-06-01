@@ -7,21 +7,17 @@ Plug 'ervandew/supertab'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/taglist.vim'
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-Plug 'vim-scripts/ZoomWin'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'millermedeiros/vim-statline'
 Plug 'kien/ctrlp.vim'
 Plug 'sickill/vim-pasta'
 Plug 'tomtom/tcomment_vim'
-Plug 'wesQ3/vim-windowswap'
 Plug 'hrj/vim-DrawIt'
 Plug 'yssl/QFEnter'
 call plug#end()
@@ -42,7 +38,7 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set noexpandtab
 set list listchars=tab:\ \ ,trail:·
 set colorcolumn=80
 
@@ -80,12 +76,6 @@ let NERDTreeDirArrows=1
 let NERDTreeIgnore = ['^node_modules$']
 map <Leader>n :NERDTreeToggle<CR>
 
-" Command-T plugin configuration
-" let g:CommandTMaxHeight=20
-
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
@@ -105,38 +95,8 @@ au BufRead,BufNewFile *bash* set filetype=sh
 " recognize Jakefile files
 au BufNewFile,BufRead {Jakefile} set filetype=javascript
 
-" sh tabbing
-au FileType sh set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
-
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
-" php tabbing
-au FileType php set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
-
-" html filetype settings
-au FileType html set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 expandtab
-
-" css filetype settings
-au FileType css set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0 expandtab
-
-" less tabbing
-au FileType less set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
-
-" js tabbing
-au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
-
-" scala tabbing
-au FileType scala set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
-
-" handlebars tabbing
-au FileType html.handlebars set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
-
-" liquid template tabbing
-au FileType liquid set softtabstop=2 tabstop=2 shiftwidth=2 expandtab
-
-" particle projects tabbing
-" au BufRead,BufEnter ~/Sites/particle/* set softtabstop=2 tabstop=2 shiftwidth=2 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -198,53 +158,6 @@ runtime! macros/matchit.vim
 
 " Show (partial) command in the status line
 set showcmd
-
-" Fancy version of :find - enables results list in quickfix pane
-" Find file in current directory and edit it.
-function! Find(...)
-  let path="."
-  if a:0==2
-    let path=a:2
-  endif
-  let l:list=system("find ".path." -name '".a:1."' | grep -v .svn ")
-  let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
-  if l:num < 1
-    echo "'".a:1."' not found"
-    return
-  endif
-  if l:num == 1
-    exe "open " . substitute(l:list, "\n", "", "g")
-  else
-    let tmpfile = tempname()
-    exe "redir! > " . tmpfile
-    silent echon l:list
-    redir END
-    let old_efm = &efm
-    set efm=%f
-
-    if exists(":cgetfile")
-        execute "silent! cgetfile " . tmpfile
-    else
-        execute "silent! cfile " . tmpfile
-    endif
-
-    let &efm = old_efm
-
-    " Open the quickfix window below the current window
-    botright copen
-
-    call delete(tmpfile)
-  endif
-endfunction
-command! -nargs=* Find :call Find(<f-args>)
-
-" syntax debugging
-function! SynStack()
-    if !exists('*synstack')
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
-endfunc
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
