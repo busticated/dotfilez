@@ -29,6 +29,7 @@ export GPG_TTY=$(tty)
 
 # node.js
 eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
+fnm use system # work-around for https://github.com/Schniz/fnm/issues/336
 
 # helpers
 function startMvim(){
