@@ -140,7 +140,7 @@ let g:solarized_termcolors = 256
 
 " Directories for swp files
 set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set directory=~/.vim/swp//
 
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
