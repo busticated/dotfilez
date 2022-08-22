@@ -62,3 +62,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 source "$HOME/.cargo/env"
+### PARTICLE BIN --- START
+export PATH="$HOME/.particle/bin":$PATH
+### PARTICLE BIN --- END
