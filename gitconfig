@@ -12,6 +12,7 @@
 	rebase = false
 [push]
 	default = matching
+	autoSetupRemote = true
 [tag]
 	forceSignAnnotated = true
 	gpgsign = true
