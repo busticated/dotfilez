@@ -1,9 +1,3 @@
-# completions
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
-source <(npm completion)
-
 # prompt
 NEWLINE=$'\n'
 export PS1="%n.........%D{%a %b %f %r}..........(%~)${NEWLINE}>>"
@@ -21,7 +15,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 # environment variables
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
-export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin":"node_modules/.bin"
+export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin"
 
 # history
 setopt SHARE_HISTORY # share history across sessions
@@ -36,15 +30,33 @@ export HISTSIZE=10000000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 
+# node.js
+eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
+fnm default 12
+
+# completions
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
+source <(npm completion)
+
 # gpg
 export GPG_TTY=$(tty)
 
-# node.js
-eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
-fnm use system # work-around for https://github.com/Schniz/fnm/issues/336
-
 # prtcl
 eval $(prtcl autocomplete:script zsh)
+
+### PARTICLE BIN --- START
+export PATH="$HOME/.particle/bin":$PATH
+### PARTICLE BIN --- END
+
+# particle (legacy)
+## added by Particle CLI
+# add home bin directory to PATH if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 
 # helpers
 function startMvim(){
