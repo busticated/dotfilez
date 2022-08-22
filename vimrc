@@ -89,6 +89,10 @@ endif
 " make uses real tabs
 au FileType make set noexpandtab
 
+" ALE stuff
+set shellcmdflag=-lc
+let g:ale_linters_ignore = { 'javascript': ['deno'] }
+
 " bash
 au BufRead,BufNewFile *bash* set filetype=sh
 
