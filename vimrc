@@ -20,6 +20,7 @@ Plug 'sickill/vim-pasta'
 Plug 'tomtom/tcomment_vim'
 Plug 'hrj/vim-DrawIt'
 Plug 'yssl/QFEnter'
+" Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Basics
@@ -90,8 +91,23 @@ endif
 au FileType make set noexpandtab
 
 " ALE stuff
-set shellcmdflag=-lc
+" set shell=zsh\ -l
+set shellcmdflag=-ic
+let g:ale_fix_on_save = 0
+let g:ale_linters = {'rust': ['analyzer']}
 let g:ale_linters_ignore = { 'javascript': ['deno'] }
+let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'], 'rust': ['rustfmt'] }
+let g:ale_rust_analyzer_config = {
+      \  'cargo': {
+      \    'features': 'all'
+      \  }
+      \}
+
+" RustFmt
+" let g:rustfmt_options = '--edition=2021' - see: https://github.com/rust-lang/rust.vim/issues/439
+let g:rustfmt_autosave = 1
+" let g:rustfmt_emit_files = 1
+" let g:rustfmt_fail_silently = 0
 
 " bash
 au BufRead,BufNewFile *bash* set filetype=sh
