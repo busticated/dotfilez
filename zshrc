@@ -13,7 +13,7 @@ alias kill-node="ps -Ax | grep '[n]ode'| cut -f 1 -d ' '| xargs kill"
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 # environment variables
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_ENV="development"
 export PATH=$PATH:"/usr/local/sbin":"/usr/local/share/android-sdk/platform-tools":"$HOME/.cargo/bin":"$(brew --prefix ruby)/bin"
 
@@ -32,7 +32,7 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 
 # node.js
 eval "$(fnm env --use-on-cd)" # switch node version based on .nvmrc - see: https://github.com/Schniz/fnm
-fnm default 12
+fnm default 20
 
 # completions
 fpath=(~/.zsh/completion $fpath)

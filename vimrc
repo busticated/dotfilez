@@ -104,7 +104,8 @@ let g:ale_rust_analyzer_config = {
       \}
 
 " RustFmt
-" let g:rustfmt_options = '--edition=2021' - see: https://github.com/rust-lang/rust.vim/issues/439
+" should be sourced from rustfmt.toml - see: https://github.com/rust-lang/rust.vim/issues/439
+let g:rustfmt_options = '--edition=2021'
 let g:rustfmt_autosave = 1
 " let g:rustfmt_emit_files = 1
 " let g:rustfmt_fail_silently = 0
