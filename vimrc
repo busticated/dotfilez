@@ -68,7 +68,7 @@ set noequalalways
 set history=10000
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+let NERDTreeIgnore=['\.DS_Store$', '\.pyc$', '\.rbc$', '\~$']
 let NERDTreeMouseMode=2
 let NERDTreeAutoCenter=0
 let NERDChristmasTree=1
