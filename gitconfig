@@ -30,3 +30,5 @@
 	ingredients = diff-tree --no-commit-id --name-only -r
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true
