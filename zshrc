@@ -2,6 +2,13 @@
 NEWLINE=$'\n'
 export PS1="%n.........%D{%a %b %f %r}..........(%~)${NEWLINE}>>"
 
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# gpg
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+
 # aliases
 alias edit-profile="startMvim ${HOME}/.dotfiles/profile"
 alias edit-zshrc="startMvim ${HOME}/.dotfiles/zshrc"
@@ -39,9 +46,6 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit
 autoload bashcompinit && bashcompinit
 source <(npm completion)
-
-# gpg
-export GPG_TTY=$(tty)
 
 # prtcl
 eval $(prtcl autocomplete:script zsh)
