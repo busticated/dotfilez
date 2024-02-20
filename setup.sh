@@ -66,6 +66,7 @@ directories=(
     "GIT;code/particle"
     "VIM;.vim/backup"
     "VIM;.vim/bundle"
+    "VIM;.vim/swp"
     "VIM;.vim/tmp"
     "HOMEBREW;Library/Caches/Homebrew"
     "MONGODB;.mongo/db"
@@ -127,7 +128,6 @@ linkUserConfigFiles ${configfiles[@]}
 
 # setup node - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 echo ":::: Configuring Node.js environment..."
-brew unlink node && brew link node@12 --force --overwrite
-npm completion > /usr/local/etc/bash_completion.d/npm
+npm completion > /opt/homebrew/etc/bash_completion.d/npm
 exit
 

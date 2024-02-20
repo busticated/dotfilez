@@ -19,7 +19,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 [alias]
 	pullall = !sh ~/.dotfiles/bash/git-pullallsubdirs.sh
 	ignored = clean -dXn
